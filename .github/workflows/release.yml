@@ -1,5 +1,6 @@
 name: Release Resume PDF # This name matches the one you mentioned failing
-
+permissions:
+  contents: write
 on:
   release:
     types: [created]
