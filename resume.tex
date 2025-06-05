@@ -1,0 +1,145 @@
+\documentclass[letterpaper]{article}
+\usepackage{fullpage, mathptmx, amsmath, amssymb, textcomp, enumitem, eso-pic, xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref} % Added for clickable links
+\setlist{leftmargin=6mm}
+\textheight=10in
+\pagestyle{empty}
+\raggedright
+\usepackage[left=0.6in,right=0.6in,bottom=0.7in,top=0.7in]{geometry}
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
+
+% Add text watermark to the bottom right of each page
+\AddToShipoutPictureBG{%
+  \AtTextLowerLeft{%
+    \raisebox{-1cm}{\makebox[\paperwidth][r]{\textsf{\small \textcolor[rgb]{0.8,0.8,0.8}{https://github.com/vinaysurendran}}\hspace{3cm}}}%
+  }%
+}
+
+% DEFINITIONS FOR RESUME %%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\lineunder} {
+    \vspace*{-8pt} \\
+    \hspace*{-18pt} \hrulefill \\
+}
+
+\newcommand{\header} [1] {
+    {\hspace*{-18pt}\vspace*{6pt} \textsc{#1}}
+    \vspace*{-6pt} \lineunder
+}
+
+% END RESUME DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\vspace*{-40pt}
+
+%==== Profile ====%
+\vspace*{-10pt}
+\begin{center}
+	{\Huge \scshape {Vinay Surendran}}\\
+	Kerala, India $\cdot$ vinaysurendran1@gmail.com $\cdot$ +91 859-045-7226 \\ \href{https://github.com/vinaysurendran}{https://github.com/vinaysurendran} $\cdot$ \href{https://linkedin.com/in/vinaysurendran}{https://linkedin.com/in/vinaysurendran}\\
+\end{center}
+
+%==== Education ====%
+\header{Education}
+\vspace{1mm}
+
+    \textbf{Bachelor of Technology (B.Tech) in Computer Science and Engineering} \hfill 2021 - 2025\\
+    Ahalia School of Engineering and Technology, A P J Abdul Kalam Technological University \hfill Kerala, India\\
+    \vspace{2mm}
+
+    \textbf{Higher Secondary (XII), Percentage: 94\%} \hfill 2019 - 2021\\
+    KPRP Higher Secondary School, State Board of Kerala \hfill Kerala, India\\
+    \vspace{2mm}
+
+%==== Skills ====%
+\header{Skills}
+\vspace{1.5mm}
+\hspace{-3mm}
+\begin{tabular}{ l l }
+    \textbf{Programming Languages:} & C, C++, Python, Java, JavaScript, SQL \\
+    \textbf{Web Development:} & HTML, CSS, React.js, Node.js, Express.js, MongoDB, RESTful APIs \\
+    \textbf{Machine Learning \& AI:} & Deep Learning, Computer Vision, CNNs, LSTM, YOLOv8, PyTorch, OpenCV, TensorFlow \\
+    \textbf{Developer Tools:} & Postman, Git \\
+    \textbf{Databases:} & MySQL, MongoDB \\
+    \textbf{Courses:} & \href{https://www.coursera.org/account/accomplishments/verify/URZKT4I7UZG0}{Supervised Machine Learning (Coursera)}, \href{https://www.linkedin.com/in/vinaysurendran/details/certifications/1733478363869/single-media-viewer/?profileId=ACoAADpPC44B_pc45X9q_UgVRuf3PKmuhrKl-lI}{Python (NPTEL)}, \href{https://www.linkedin.com/in/vinaysurendran/details/certifications/1733479073137/single-media-viewer/?profileId=ACoAADpPC44B_pc45X9q_UgVRuf3PKmuhrKl-lI}{AI/ML for Geodata (ISRO)} \\
+\end{tabular}
+\vspace{2mm}
+
+%==== Experience ====%
+\header{Work Experience}
+\vspace{1mm}
+
+    \textbf{ICT Academy of Kerala} \hfill Calicut, India\\
+    \textit{Full Stack Development Intern} \hfill \textsl{January 2025 - February 2025}\\
+    \textsl{React.js, Node.js, Express.js, MongoDB, Material UI, RESTful APIs} \hfill \texttt{\href{https://github.com/vinaysurendran/-CareerConnect}{https://github.com/vinaysurendran/-CareerConnect}} \\
+    \vspace{-7pt}
+    \begin{itemize} \itemsep -1mm
+        \item Developed a full-stack job portal (CareerConnect) using MERN stack, enabling job seekers to apply and track applications while admins manage job listings.
+        \item Implemented secure user authentication using JWT and role-based access control (RBAC) for admins and users.
+        \item Designed a React.js frontend with Material UI, featuring dynamic job listings and an intuitive dashboard.
+        \item Built a RESTful API in Node.js/Express.js to handle job creation, applications, and authentication.
+        \item Used MongoDB and Mongoose for efficient job and user data management.
+    \end{itemize}
+    \vspace{-2mm}
+
+%==== Projects ====%
+\header{Projects}
+\vspace{1mm}
+
+    \textbf{Deepfake Detection using ResNet-18 + LSTM Hybrid Model} \hfill \textsl{March 2025} \\
+    \textsl{PyTorch, OpenCV, ResNet-18, LSTM, scikit-learn, NumPy, Haar Cascades, Google Colab} \hfill \texttt{\href{https://github.com/vinaysurendran/Deepfake-Detection}{https://github.com/vinaysurendran/Deepfake-Detection}} \\
+    \vspace{-2mm}
+    \begin{itemize} \itemsep -1mm
+        \item Achieved 96.5\% accuracy (F1: 0.86) on Celeb-DF using ResNet-18 for spatial features and LSTM for temporal sequencing.
+        \item Tuned model with frame-level augmentation and cross-validation to reach 92.9\% precision, 80.2\% recall.
+        \item Optimized threshold via ROC curve (AUC: 0.983) to reduce false positives.
+        \item Monitored F1/loss across 30 epochs to control overfitting.
+    \end{itemize}
+    \vspace{-1mm}
+
+    \textbf{College Sports Tournament Management System} \hfill \textsl{March 2025} \\
+    \textsl{React.js, Node.js, Express.js, MongoDB, RESTful APIs} \\
+    \texttt{\href{https://github.com/vinaysurendran/Sports-Management-App}{https://github.com/vinaysurendran/Sports-Management-App}} \\
+    \vspace{-2mm}
+    \begin{itemize} \itemsep -1mm
+        \item Built a full-stack app to manage college tournaments for ASL and APL in a 5-hour hackathon, placing 4th with a team of 2.
+        \item Automated team registration, round-robin scheduling, score tracking, and standings using React and Node.js/Express.
+        \item Integrated MongoDB for data management and developed RESTful APIs for real-time updates.
+    \end{itemize}
+    \vspace{-1mm}
+
+    \textbf{Real-Time Object Detection and Audio Notification System} \hfill \textsl{May 2024} \\
+    \textsl{YOLOv8, Python, OpenCV, gTTS, Pygame} \\ \texttt{\href{https://github.com/vinaysurendran/-Real-Time-Object-Detection-and-Audio-Notification-System-}{https://github.com/vinaysurendran/-Real-Time-Object-Detection-and-Audio-Notification-System-}} \\
+    \vspace{-2mm}
+    \begin{itemize} \itemsep -1mm
+        \item Deployed OpenCV-based video stream integrated with YOLOv8 for live object classification.
+        \item Converted detections to auditory output using gTTS and Pygame, enabling accessibility use-cases.
+        \item Implemented bounding box and centroid tracking for real-time spatial analysis.
+    \end{itemize}
+    \vspace{-1mm}
+
+    \textbf{Personal Protective Equipment (PPE) Detection} \hfill \textsl{August 2024} \\
+    \textsl{YOLO, Python, OpenCV, Google Colab} \\ \texttt{\href{https://github.com/vinaysurendran/Personal-Protective-Equipment-PPE-Detection-}{https://github.com/vinaysurendran/Personal-Protective-Equipment-PPE-Detection-}} \\
+    \vspace{-2mm}
+    \begin{itemize} \itemsep -1mm
+        \item Trained YOLO model on custom PPE dataset; deployed detection system for safety compliance.
+        \item Added color-coded visual alerts for helmets and vests based on detection confidence thresholds.
+    \end{itemize}
+    \vspace{-1mm}
+
+%==== Additional ====%
+\header{Additional}
+\vspace{1mm}
+
+    \begin{itemize} \itemsep -1mm
+        \item \textbf{Extra-Curricular:} Volunteer, KTU Techfest \& KETCON 2024, NSS Volunteer, Art
+        \item \textbf{Languages:} English, Malayalam, Tamil, Hindi
+    \end{itemize}
+    \vspace{-2mm}
+
+\end{document}
