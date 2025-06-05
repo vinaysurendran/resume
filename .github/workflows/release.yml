@@ -1,4 +1,4 @@
-name: Release # Or Release Resume PDF, whichever you prefer
+name: Release Resume PDF # This name matches the one you mentioned failing
 
 on:
   release:
@@ -7,29 +7,37 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions: # Add this block
-      contents: write # Grant write permissions to contents (releases, assets)
+    permissions: # <--- THIS BLOCK IS CRUCIAL AND MUST BE ADDED HERE
+      contents: write # Grants permission to create/upload release assets
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: tex to pdf
+      - name: Compile LaTeX to PDF
         uses: xu-cheng/latex-action@v2
         with:
           root_file: resume.tex
+
+      - name: Get release version (tag)
+        id: get_tag
+        run: echo "RELEASE_TAG=${GITHUB_REF##*/}" >> $GITHUB_ENV # This step is part of your failing workflow
+
+      - name: Rename output PDF with version
+        run: mv resume.pdf resume_${{ env.RELEASE_TAG }}.pdf # This step is part of your failing workflow
 
       - name: Get release
         id: get_release
         uses: bruceadams/get-release@v1.2.3
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token now has proper permissions
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload resume.pdf
-        uses: actions/upload-release-asset@v1.2.1 # Still recommend updating this from v1
+      - name: Upload versioned PDF to release
+        uses: actions/upload-release-asset@v1.2.1 # <--- UPDATE THIS LINE AS WELL
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.get_release.outputs.upload_url }}
-          asset_path: resume.pdf
-          asset_name: ${{ github.actor }}_resume.pdf
+          asset_path: resume_${{ env.RELEASE_TAG }}.pdf
+          asset_name: resume_${{ env.RELEASE_TAG }}.pdf
           asset_content_type: application/pdf
