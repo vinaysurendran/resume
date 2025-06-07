@@ -23,11 +23,6 @@ On release creation, `.github/workflows/release.yml` executes:
 - Builds `resume.tex` to `resume.pdf` using `xu-cheng/latex-action`
 - Uploads PDF to release assets as `{username}_resume.pdf`
 
-## Local Build (Optional)
-
-Install LaTeX. Compile with:
-
-
 ## Structure
 
 - `resume.tex`: LaTeX source
