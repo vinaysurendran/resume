@@ -2,7 +2,7 @@
 
 Tracks LaTeX resume changes and builds PDF via GitHub Actions.
 
-Latest release PDF: [Releases](https://github.com/vinaysurendran/resume/releases/latest)
+Latest release PDF: [Download Resume](https://github.com/vinaysurendran/resume/releases/latest/download/vinaysurendran_resume.pdf)
 
 ## Usage
 
@@ -27,4 +27,5 @@ On release creation, `.github/workflows/release.yml` executes:
 
 - `resume.tex`: LaTeX source
 - `.github/workflows/release.yml`: Workflow definition
+
 - `README.md`: Project documentation
